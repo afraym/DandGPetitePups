@@ -6,12 +6,10 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Middleware\AdminMiddleware;
 
 
-Route::get('/', function () {
-    return view('front.index');
-});
+Route::get('/', [App\Http\Controllers\PuppyController::class, 'index']);
 
 // admin routes
-Route::prefix('admin')->middleware(AdminMiddleware::class)->group(function () {
+Route::prefix('admin')->group(function () {
 // puppies routes    
 Route::get('/puppy/new', [App\Http\Controllers\PuppyController::class, 'create'])->name('admin.puppy.create');
 Route::get('/puppy/all', [App\Http\Controllers\PuppyController::class, 'list'])->name('admin.puppy.list');
@@ -19,7 +17,7 @@ Route::get('/puppy/edit/{id}', [App\Http\Controllers\PuppyController::class, 'ed
 Route::patch('/puppy/update/{id}', [App\Http\Controllers\PuppyController::class, 'update'])->name('admin.puppy.update');
 Route::post('/puppy/delete/', [App\Http\Controllers\PuppyController::class, 'destroy'])->name('admin.puppy.delete');
 Route::post('/ai/new', [App\Http\Controllers\AiController::class, 'create'])->name('admin.ai.create');
-Route::patch('/ai/new', [App\Http\Controllers\AiController::class, 'create'])->name('admin.ai.create');
+Route::patch('/ai/new', [App\Http\Controllers\AiController::class, 'create'])->name('admin.ai.patch');
 
 Route::get('/users/all', [App\Http\Controllers\UsersController::class, 'index'])->name('admin.user.list');
 Route::get('/user/edit/{id}', [App\Http\Controllers\UsersController::class, 'edit'])->name('admin.user.edit');

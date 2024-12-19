@@ -30,13 +30,13 @@ class AiController extends Controller
             'Health_Warranty','location',
           ]);
 
-        $yourApiKey = getenv('Gemini_API');
-        $client = Gemini::client($yourApiKey);
+        $Gemini_API = getenv('Gemini_API');
+        $client = Gemini::client($Gemini_API);
 
         $shortDescription = $client->geminiPro()->generateContent("Generate a creatve short description to SELL a puppy
-        with this details calcualting the age ".json_encode($details))->text();
+        with this details".json_encode($details))->text();
 
-        $description = $client->geminiPro()->generateContent("calcualting the age and Generate an description to sell a puppy
+        $description = $client->geminiPro()->generateContent("Generate a description to sell a puppy
         using this details ".json_encode($details))->text();
 
         $keywords = $client->geminiPro()->generateContent("generate meta keywords separated by comma for SEO to sell a puppy

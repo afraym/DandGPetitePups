@@ -15,7 +15,11 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // echo "Hello";
-        return $next($request);
+        if ($request->user() && $request->user()->role === 'admin') {
+            return $next($request);
+        }
+
+        return redirect('/'); // or any other route you want to redirect to
     }
 }
+

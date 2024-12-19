@@ -29,8 +29,8 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image:</label>
                             <br>
-                            <a href="/users/{{ $user->image }}" target="_blank" rel="noopener noreferrer">
-                                <img src="/users/{{ $user->image }}" alt="{{ $user->name}}" class="img-thumbnail" style="width: 35%; height:20%">
+                            <a href="/{{ $user->image }}" target="_blank" rel="noopener noreferrer">
+                                <img src="/{{ $user->image }}" alt="{{ $user->name}}" class="img-thumbnail" style="width: 35%; height:20%">
                               </a>
                         </div>
                         <label for="exampleInputEmail1">Replace Image:</label>
@@ -43,27 +43,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="userdesc">Description :</label>
-                            <div name="description" id="userdesc" name="userdesc" class="htmledit">{!! $user->description !!}</div>
-                            <input type="hidden" id="userDescHtml" name="userdeschtml" class="htmlvalue" value="{!! $user->description !!}">
+                            <label for="role">User Role:</label>
+                            <select name="role" id="role" class="form-control">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                                <option value="super-admin">Super Admin</option>
+                            </select>
                         </div>
-
-                        <div class="form-group">
-                            <label for="metaTitle">Meta Title:</label>
-                            <input type="text" class="form-control" name="metaTitle"
-                                value="{{ $user->metaTitle }}" data-datepicker-color="primary">
-                        </div>
-                        <div class="form-group">
-                            <label for="metaDescription">Meta Description:</label>
-                            <input type="text" class="form-control" name="metaDescription"
-                                value="{{ $user->metaDescription }}" data-datepicker-color="primary">
-                        </div>
-                        <div class="form-group">
-                            <label for="metaKeywords">Meta Keywords:</label>
-                            <input type="text" class="form-control" name="metaKeywords"
-                                value="{{ $user->metaKeywords }}" data-datepicker-color="primary">
-                                <small id="metaKeywords" class="form-text text-muted">Separate each word with a comma ,</small>
-                        </div>
+                        
                         <button type="submit" class="btn btn-primary" id="submituser">Submit</button>
                     </form>
                 </div>

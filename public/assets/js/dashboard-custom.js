@@ -1,20 +1,3 @@
-$('.date-picker').each(function () {
-    $(this).datepicker({
-        templates: {
-            leftArrow: '<i class="now-ui-icons arrows-1_minimal-left"></i>',
-            rightArrow: '<i class="now-ui-icons arrows-1_minimal-right"></i>'
-        }
-    }).on('show', function () {
-        $('.datepicker').addClass('open');
-
-        datepicker_color = $(this).data('datepicker-color');
-        if (datepicker_color.length != 0) {
-            $('.datepicker').addClass('datepicker-' + datepicker_color + '');
-        }
-    }).on('hide', function () {
-        $('.datepicker').removeClass('open');
-    });
-});
 
 const quillInstances = document.querySelectorAll('.htmledit');
 
@@ -98,19 +81,22 @@ $(document).ready(function () {
             // First change the button to actually tell Dropzone to process the queue.
             $("#submitpuppy")[0].addEventListener("click", function (e) {
                 // Make sure that the form isn't actually being sent.
+                $('html, body').animate({
+                    scrollTop: $(".card-header").offset().top
+                }, 'slow');
                 e.preventDefault();
                 e.stopPropagation();
 
                 // submit form without images
                 if (!myDropzone.files.length) {
                     $('form').submit(); // just submit the form
+                   
                 } else {
                     if ($('#name').val() == '') {
                         $('#name').parent().addClass('has-danger');
                     } else if ($("#price").val() == '') {
                         $('#price').parent().addClass('has-danger');
                     } else {
-
                         myDropzone.processQueue();
                     };
 
@@ -123,10 +109,12 @@ $(document).ready(function () {
             this.on("sendingmultiple", function (FILES, xhr, formData) {
                 // Gets triggered when the form is actually being sent.
                 // Hide the success button or the complete form.
+                window.scrollTo({ top: 0, behavior: 'smooth' });
                 var data = $('.dropzoneform').serializeArray();
                 $.each(data, function (key, el) {
                     formData.append(el.name, el.value);
                 });
+
             });
 
             this.on("successmultiple", function (files, response) {
@@ -210,5 +198,23 @@ $('#aicreate').on("click", function (e) {
             $('#aicreateloading').hide();
             alert('Someting went wrong try again, Error: ' + error);
         }
+    });
+});
+
+$('.date-picker').each(function () {
+    $(this).datepicker({
+        templates: {
+            leftArrow: '<i class="now-ui-icons arrows-1_minimal-left"></i>',
+            rightArrow: '<i class="now-ui-icons arrows-1_minimal-right"></i>'
+        }
+    }).on('show', function () {
+        $('.datepicker').addClass('open');
+
+        datepicker_color = $(this).data('datepicker-color');
+        if (datepicker_color.length != 0) {
+            $('.datepicker').addClass('datepicker-' + datepicker_color + '');
+        }
+    }).on('hide', function () {
+        $('.datepicker').removeClass('open');
     });
 });

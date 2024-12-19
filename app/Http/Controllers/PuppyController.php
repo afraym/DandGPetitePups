@@ -21,7 +21,8 @@ class PuppyController extends Controller
      */
     public function index()
     {
-        //
+        $puppies = Puppy::with('puppy_images')->orderBy('id','desc')->paginate(20);
+        return view('front.index')->with('puppies', $puppies);
     }
 
     /**
@@ -40,7 +41,7 @@ class PuppyController extends Controller
      */
     public function create()
     {
-
+        $this->authorize('create', Puppy::class);
         $breeds = Breed::Where('status','=', 1)->get();
         return view('back.puppy.create')->with('breeds', $breeds);
     }
@@ -50,6 +51,7 @@ class PuppyController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Puppy::class);
 
         $request->validate([
             'name' => 'required|max:255',
@@ -89,6 +91,7 @@ class PuppyController extends Controller
      */
     public function show(Puppy $puppy, Request $request)
     {
+        $this->authorize('view', $puppy);
 
         $puppy = Puppy::where('id', $request->id)->first();
         $puppyImages = PuppyImage::where('puppy_id', $request->id)->get();
@@ -102,6 +105,7 @@ class PuppyController extends Controller
      */
     public function edit(Puppy $puppy, Request $request)
     {
+        $this->authorize('update', $puppy);
         $editPuppy = Puppy::with('puppy_images', 'puppy_details')->Where('id', $request->id)->first();
         $breeds = Breed::select('id','name', 'status')->get();
 
@@ -117,6 +121,8 @@ class PuppyController extends Controller
      */
     public function update(Request $request,$id)
     {
+        $this->authorize('update', $puppy);
+
         // dd($request);
         // $request->validate([
         //     'name' => 'required|max:255',
@@ -155,6 +161,7 @@ class PuppyController extends Controller
      */
     public function destroy(Puppy $puppy, Request $request)
     {
+        $this->authorize('delete', $puppy);
         $puppy = Puppy::find($request->id);
         $puppy->delete();
         return redirect()->back()

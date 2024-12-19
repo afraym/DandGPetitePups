@@ -42,7 +42,9 @@
                             <label for="photodate">Date photos were taken:</label>
                             <input type="text" class="form-control date-picker" name="Photo_Date" value="{{ $todaysdate }}" data-datepicker-color="primary">
                           </div>
-                        <div class="form-group">
+
+                          <div class="form-row">
+                        <div class="form-group col-sm-6">
                             <p>Gender:</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -60,7 +62,8 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
+                        
+                        <div class="form-group col-sm-6">
                             <p>Size:</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -85,7 +88,7 @@
                                 </label>
                             </div>
                         </div>
-
+                    </div> {{--form row--}}
                         <div class="form-group">
                           <label for="birthdate">Birthdate:</label>
                           <input type="text" class="form-control date-picker" name="Birth_Date" value="{{ $todaysdate }}" data-datepicker-color="primary">
@@ -108,8 +111,8 @@
                             </div>
                           </div>
 
-
-                          <div class="form-group">
+                          <div class="form-row">
+                          <div class="form-group col-sm-4">
                             <p>Champion Bloodlines:</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -128,7 +131,7 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group col-sm-4">
                             <p>Champion Sired:</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -147,7 +150,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group col-sm-4">
                             <p>Vaccinations and Dewormings:</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -165,8 +168,10 @@
                                 </label>
                             </div>
                         </div>
-                        
-                        <div class="form-group">
+                          </div> {{--form row--}}
+
+                          <div class="form-row">
+                        <div class="form-group col-sm-4">
                             <p>Health Certificate :</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -184,7 +189,7 @@
                                 </label>
                             </div>
                         </div>
-                         <div class="form-group">
+                         <div class="form-group col-sm-4">
                             <p>Health Record :</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -202,7 +207,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-sm-4">
                             <p>Health Warranty :</p>
                             <div class="form-check form-check-radio form-check-inline">
 
@@ -220,10 +225,11 @@
                                 </label>
                             </div>
                         </div>
+                          </div> {{--form row--}}
 
                         <div class="form-group">
                             
-                            {{-- <label for="puppydesc">Short Description :</label> 
+                            <label for="puppydesc">Short Description :</label> 
                             <button class="btn btn-sm btn-info" type="button" id="aicreate">Generate with AI <i class="fa-solid fa-robot"></i></button>
                             <button class="btn btn-sm btn-info" type="button" id="aicreateloading" style="display: none">Please wait a moment <i class="fa-solid fa-spinner fa-spin-pulse"></i></button>
                             <div name="description" id="shortDesc" name="puppyShortdesc" class="htmledit"></div>
@@ -234,7 +240,7 @@
                             <label for="puppydesc">Description :</label> 
                             <div name="description" id="longDesc" name="puppydesc" class="htmledit"></div>
                             <input type="hidden" id="longDescHtml" name="puppyDescHtml" class="htmlvalue" value="" >
-                          </div> --}}
+                          </div>
 
                         <div class="form-group">
                             <label for="videoPreview">Video Preview:</label>
