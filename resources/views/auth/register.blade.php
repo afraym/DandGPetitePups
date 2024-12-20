@@ -8,7 +8,7 @@
                 <div class="form-wrapper wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
                     <div class="form-title">
                         <h3>Sign Up</h3>
-                        <p>Do you already have an account? <a href="login.html">Log in here</a></p>
+                        <p>Do you already have an account? <a href="/login">Log in here</a></p>
                     </div>
                     <form class="w-100" method="POST" action="{{ route('register') }}">
                         @csrf
