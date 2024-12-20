@@ -5,10 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-if (Auth::check()) {
-    // The user is logged in...
-    dd("logged");
-}
+
 Route::get('/', [App\Http\Controllers\PuppyController::class, 'index']);
 
 // admin routes
