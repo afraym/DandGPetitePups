@@ -305,8 +305,8 @@
                     <div class="collection-content text-center">
                         <h4><a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}">{{ $puppy->name }}</a></h4>
                         <div class="price">
-                            <h6>$25.00</h6>
-                            <del>$30.00</del>
+                            <h6>${{ $puppy->price }}</h6>
+                            <del>${{ $puppy->price * 1.5 }}</del>
                         </div>
                         <div class="review">
                             <ul>
