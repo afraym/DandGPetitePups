@@ -41,7 +41,7 @@ Route::get('/puppy/{id}/{name}', [App\Http\Controllers\PuppyController::class, '
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/auth/redirect', function () {
     return Socialite::driver('google')->redirect();
