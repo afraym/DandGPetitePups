@@ -2,14 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-use App\Http\Middleware\AdminMiddleware;
 
-
+if (Auth::check()) {
+    // The user is logged in...
+    dd("logged");
+}
 Route::get('/', [App\Http\Controllers\PuppyController::class, 'index']);
 
 // admin routes
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
 // puppies routes    
 Route::get('/puppy/new', [App\Http\Controllers\PuppyController::class, 'create'])->name('admin.puppy.create');
 Route::get('/puppy/all', [App\Http\Controllers\PuppyController::class, 'list'])->name('admin.puppy.list');

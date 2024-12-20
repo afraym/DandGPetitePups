@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        $user1 = User::factory()->create([
             'name' => 'Afraym',
             'email' => 'afraymn@gmail.com',
             'password' => bcrypt('12345678'),
@@ -26,10 +26,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user2 = User::factory()->create([
-            'name' => 'John Doe',
-            'email' => 'johndoe@example.com',
-            'password' => bcrypt('12345678'),
+            'name' => 'guy garner',
+            'email' => 'army52@juno.com',
+            'password' => '$2y$12$YoWQAmxXpxrhWnov4YA3e.c9KizcYsorFaS0kq4gl8pICuzLLSLfy',
             'image' => 'https://randomuser.me/api/portraits/men/28.jpg',
+            'role' => 'super-admin',
+            'created_at' => '2024-09-04 21:06:00',
+            'updated_at' => '2024-09-04 21:06:00',
         ]);
         
         // Attach permissions to roles
