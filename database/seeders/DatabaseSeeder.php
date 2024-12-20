@@ -25,6 +25,14 @@ class DatabaseSeeder extends Seeder
             'role' => 'super-admin',
         ]);
 
+        $user2 = User::factory()->create([
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com',
+            'password' => bcrypt('12345678'),
+            'image' => 'https://randomuser.me/api/portraits/men/28.jpg',
+        ]);
+        
+        // Attach permissions to roles
         $superAdminRole = Role::create(['name' => 'super-admin']);
         $adminRole = Role::create(['name' => 'admin']);
         $userRole = Role::create(['name' => 'user']);
@@ -38,6 +46,9 @@ class DatabaseSeeder extends Seeder
         $adminRole->permissions()->attach([$createPuppy->id, $viewPuppy->id, $updatePuppy->id, $deletePuppy->id]);
         $userRole->permissions()->attach([$viewPuppy->id]);
 
+        // Assign super-admin role to users
+        $user1->roles()->attach($superAdminRole);
+        $user2->roles()->attach($superAdminRole);
         ini_set('memory_limit', '-1');
 
         DB::unprepared(file_get_contents(__dir__ . '/breeds.sql'));
