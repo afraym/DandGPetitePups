@@ -284,9 +284,10 @@
                         <span>Offer</span>
                     </div>
                     <div class="collection-img">
-                        <img class="img-gluid"
-                            src="{{ $puppy->puppy_images->first()->link . $puppy->puppy_images->first()->nameWithoutExt}}-thumb.webp"
-                            alt>
+                        <img class="img-fluid"
+                            src="{{ $puppy->puppy_images->first?->link . $puppy->puppy_images->first?->nameWithoutExt}}-thumb.webp"
+                            alt="{{ $puppy->puppy_images->first?->name }}">
+
                         <div class="view-dt-btn">
                             <div class="plus-icon">
                                 <i class="bi bi-plus"></i>

@@ -81,9 +81,11 @@ $(document).ready(function () {
             // First change the button to actually tell Dropzone to process the queue.
             $("#submitpuppy")[0].addEventListener("click", function (e) {
                 // Make sure that the form isn't actually being sent.
-                $('html, body').animate({
-                    scrollTop: $(".card-header").offset().top
-                }, 'slow');
+                // $("form").children().each(function(){
+                //     $(this).slideUp(1100);
+                // });
+
+                $("form").slideUp(1100);
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -101,7 +103,6 @@ $(document).ready(function () {
                     };
 
                 }
-
             });
 
             // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
@@ -121,9 +122,9 @@ $(document).ready(function () {
                 // Gets triggered when the files have successfully been sent.
                 // Redirect user or notify of success.
                 console.log(response.success);
-                $(".dropzoneform").fadeOut(2);
+                $(".dropzoneform").fadeOut(3);
                 $('#success').html(response.success)
-                $('#success').show();
+                $('#success').fadeIn(3);
             });
             this.on("errormultiple", function (files, response) {
                 // Gets triggered when there was an error sending the files.

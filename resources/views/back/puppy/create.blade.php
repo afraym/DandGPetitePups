@@ -16,7 +16,7 @@
                     <form name="newPuppy" method="POST" action="/admin/puppy/add" id="newPuppy" enctype="multipart/form-data" class="dropzoneform">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
+                            <label for="exampleInputEmail1">Name:</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="Puppy Name" required="required">
                         </div>
                         <div class="form-group">
@@ -230,7 +230,7 @@
                         <div class="form-group">
                             
                             <label for="puppydesc">Short Description :</label> 
-                            <button class="btn btn-sm btn-info" type="button" id="aicreate">Generate with AI <i class="fa-solid fa-robot"></i></button>
+                            <button class="btn btn-sm btn-info" type="button" id="aicreate">Generate By AI <i class="fa-solid fa-robot"></i></button>
                             <button class="btn btn-sm btn-info" type="button" id="aicreateloading" style="display: none">Please wait a moment <i class="fa-solid fa-spinner fa-spin-pulse"></i></button>
                             <div name="description" id="shortDesc" name="puppyShortdesc" class="htmledit"></div>
                             <input type="hidden" id="shortDescHtml" name="shortDescHtml" class="htmlvalue" value="">

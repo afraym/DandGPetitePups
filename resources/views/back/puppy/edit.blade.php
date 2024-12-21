@@ -283,7 +283,7 @@ $puppy->details = $puppy->puppy_details[0];
                         </div>
                         <div class="form-group">
                             <label for="puppydesc">Short Description :</label>
-                            <button class="btn btn-sm btn-info" type="button" id="aicreate">Generate with AI <i
+                            <button class="btn btn-sm btn-info" type="button" id="aicreate">Generate By AI <i
                                     class="fa-solid fa-robot"></i></button>
                             <div name="description" id="puppyShortdesc" name="puppyShortdesc" class="htmledit">{!!
                                 $puppy->shortDescHtml !!}</div>
