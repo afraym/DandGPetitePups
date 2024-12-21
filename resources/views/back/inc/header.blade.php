@@ -33,10 +33,10 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="/admin" class="simple-text logo-mini">
+        <a href="/admin/puppy/new" class="simple-text logo-mini">
           D&G
         </a>
-        <a href="/admin" class="simple-text logo-normal">
+        <a href="/admin/puppy/new" class="simple-text logo-normal">
           Petite pups
         </a>
       </div>
@@ -142,13 +142,21 @@
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/" title="Home">
+                  <i class="now-ui-icons shopping_shop"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Home Page</span>
+                  </p>
+                </a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{ Auth::user()->name }} 
                   <i class="now-ui-icons users_single-02"></i>
-                  <p>
+                  {{-- <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
+                  </p> --}}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="{{ route('logout') }}"

@@ -284,10 +284,15 @@
                         <span>Offer</span>
                     </div>
                     <div class="collection-img">
+                        @if(empty($puppy->puppy_images->first()))
                         <img class="img-fluid"
-                            src="{{ $puppy->puppy_images->first?->link . $puppy->puppy_images->first?->nameWithoutExt}}-thumb.webp"
-                            alt="{{ $puppy->puppy_images->first?->name }}">
-
+                            src="404"
+                            alt="{{ $puppy->name }} image not found">
+                        @else
+                        <img class="img-fluid"
+                            src="{{ $puppy->puppy_images->first()->link . $puppy->puppy_images->first()->nameWithoutExt}}-thumb.webp"
+                            alt="{{ $puppy->name }} image">
+                        @endif
                         <div class="view-dt-btn">
                             <div class="plus-icon">
                                 <i class="bi bi-plus"></i>
