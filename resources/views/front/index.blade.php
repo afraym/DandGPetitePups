@@ -20,7 +20,7 @@
                                     <h6>Limited Offer</h6>
                                     <h1>Best Food For Your Loving Dog.</h1>
                                     <div class="btn-group">
-                                        <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
+                                        <a class="primary-btn5 btn-md" href="/shop">Shop Now</a>
                                         <a class="primary-btn6" href="shop-details.html">View Details</a>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                     <h6>Limited Offer</h6>
                                     <h1>Best Food For Your Loving Cat.</h1>
                                     <div class="btn-group">
-                                        <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
+                                        <a class="primary-btn5 btn-md" href="/shop">Shop Now</a>
                                         <a class="primary-btn6" href="shop-details.html">View Details</a>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                     <h6>Limited Offer</h6>
                                     <h1>Best Food For Your Loving Dog.</h1>
                                     <div class="btn-group">
-                                        <a class="primary-btn5 btn-md" href="shop.html">Shop Now</a>
+                                        <a class="primary-btn5 btn-md" href="/shop">Shop Now</a>
                                         <a class="primary-btn6" href="shop-details.html">View Details</a>
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
 
 <div class="home3-categoty-area pt-120 mb-120">
     <div class="container">
-        <div class="row mb-60">
+        {{-- <div class="row mb-60">
             <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
                 <div class="section-title3">
                     <h2><img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/h3-sec-tt-vect-left.svg"
@@ -137,7 +137,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="category-card">
-                                <a href="shop.html" class="category-card-inner">
+                                <a href="/shop" class="category-card-inner">
                                     <div class="category-card-front">
                                         <div class="category-icon">
                                             <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/dog.svg"
@@ -156,7 +156,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="category-card">
-                                <a href="shop.html" class="category-card-inner">
+                                <a href="/shop" class="category-card-inner">
                                     <div class="category-card-front">
                                         <div class="category-icon">
                                             <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/cat.svg"
@@ -175,7 +175,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="category-card">
-                                <a href="shop.html" class="category-card-inner">
+                                <a href="/shop" class="category-card-inner">
                                     <div class="category-card-front">
                                         <div class="category-icon">
                                             <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/bird.svg"
@@ -194,7 +194,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="category-card">
-                                <a href="shop.html" class="category-card-inner">
+                                <a href="/shop" class="category-card-inner">
                                     <div class="category-card-front">
                                         <div class="category-icon">
                                             <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Rabbit.svg"
@@ -213,7 +213,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="category-card">
-                                <a href="shop.html" class="category-card-inner">
+                                <a href="/shop" class="category-card-inner">
                                     <div class="category-card-front">
                                         <div class="category-icon">
                                             <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Acces.svg"
@@ -232,7 +232,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="category-card">
-                                <a href="shop.html" class="category-card-inner">
+                                <a href="/shop" class="category-card-inner">
                                     <div class="category-card-front">
                                         <div class="category-icon">
                                             <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/fish.svg"
@@ -252,7 +252,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 
@@ -268,67 +268,13 @@
                             alt></h2>
                 </div>
                 <div class="h3-view-btn d-md-flex d-none">
-                    <a href="shop.html">View All Puppies<img
+                    <a href="/shop">View All Puppies<img
                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/haf-button-2.svg"
                             alt></a>
                 </div>
             </div>
         </div>
-        <div class="row g-4 justify-content-center">
-            @foreach ($puppies as $puppy)
-                
-           
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="collection-card">
-                    <div class="offer-card">
-                        <span>Offer</span>
-                    </div>
-                    <div class="collection-img">
-                        @if(empty($puppy->puppy_images->first()))
-                        <img class="img-fluid"
-                            src="404"
-                            alt="{{ $puppy->name }} image not found">
-                        @else
-                        <img class="img-fluid"
-                            src="{{ $puppy->puppy_images->first()->link . $puppy->puppy_images->first()->nameWithoutExt}}-thumb.webp"
-                            alt="{{ $puppy->name }} image">
-                        @endif
-                        <div class="view-dt-btn">
-                            <div class="plus-icon">
-                                <i class="bi bi-plus"></i>
-                            </div>
-                            <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}">View Details</a>
-                        </div>
-                        <ul class="cart-icon-list">
-                            <li><a href="/cart"><img
-                                        src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
-                                        alt></a></li>
-                            <li><a href="#"><img
-                                        src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-favorites3.svg"
-                                        alt></a></li>
-                        </ul>
-                    </div>
-                    <div class="collection-content text-center">
-                        <h4><a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}">{{ $puppy->name }}</a></h4>
-                        <div class="price">
-                            <h6>${{ $puppy->price }}</h6>
-                            <del>${{ $puppy->price * 1.5 }}</del>
-                        </div>
-                        <div class="review">
-                            <ul>
-                                <li><i class="bi bi-star-fill"></i></li>
-                                <li><i class="bi bi-star-fill"></i></li>
-                                <li><i class="bi bi-star-fill"></i></li>
-                                <li><i class="bi bi-star-fill"></i></li>
-                                <li><i class="bi bi-star-fill"></i></li>
-                            </ul>
-                            <span>(50)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
+        @include('front.puppy.list')
         <div class="row d-md-none d-block pt-30">
             <div class="col-lg-12 d-flex justify-content-center">
                 <div class="h3-view-btn">
@@ -350,7 +296,7 @@
                     <div class="offer-content">
                         <span>50% Off</span>
                         <h2>Ingredients for dogs with packages.</h2>
-                        <a class="primary-btn6" href="shop.html">Shop Now</a>
+                        <a class="primary-btn6" href="/shop">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -394,7 +340,7 @@
                                                 <h6>$25.00</h6>
                                                 <del>$30.00</del>
                                             </div>
-                                            <a class="primary-btn6" href="shop.html">Shop Now</a>
+                                            <a class="primary-btn6" href="/shop">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -417,7 +363,7 @@
                                                 <h6>$25.00</h6>
                                                 <del>$30.00</del>
                                             </div>
-                                            <a class="primary-btn6" href="shop.html">Shop Now</a>
+                                            <a class="primary-btn6" href="/shop">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -694,7 +640,7 @@
                         <div class="offer-tag  d-lg-none d-flex justify-content-center">
                             <h3>50%<span>Off</span></h3>
                         </div>
-                        <a class="primary-btn6" href="shop.html">Shop Now</a>
+                        <a class="primary-btn6" href="/shop">Shop Now</a>
                         <div class="offer-tag d-lg-flex d-none">
                             <h3>50%<br><span>Off</span></h3>
                         </div>
@@ -928,7 +874,7 @@
         <div class="row d-md-none d-block pt-30">
             <div class="col-lg-12 d-flex justify-content-center">
                 <div class="h3-view-btn">
-                    <a href="shop.html">View All Product<img
+                    <a href="/shop">View All Product<img
                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/haf-button-2.svg"
                             alt></a>
                 </div>

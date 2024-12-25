@@ -21,8 +21,19 @@ class PuppyController extends Controller
      */
     public function index()
     {
+        $settings = DB::table('settings')->first();
         $puppies = Puppy::with('puppy_images')->orderBy('id','desc')->paginate(20);
-        return view('front.index')->with('puppies', $puppies);
+        return view('front.index')->with(['puppies' => $puppies, 'settings' => $settings]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function shop()
+    {
+        $settings = DB::table('settings')->first();
+        $puppies = Puppy::with('puppy_images')->orderBy('id','desc')->paginate(20);
+        return view('front.shop')->with(['puppies' => $puppies, 'settings' => $settings]);
     }
 
     /**

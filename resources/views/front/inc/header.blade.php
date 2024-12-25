@@ -45,18 +45,18 @@
             <div class="row">
                 <div class="col-lg-12 d-flex align-items-center justify-content-md-between justify-content-center">
                     <div class="contact-number">
-                        <a href="tel:+1(541)754-3020"><img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/support2.svg" alt> +1 (541)
-                            754-3010</a>
+                        <a href="tel:{{ $settings->phone }}"><img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/support2.svg" alt> {{ formatPhoneNumber($settings->phone ?? '') }}</a>
                     </div>
                     <div class="opening-time text-center">
                         <p>Free Shipping On Shipment of $80 Or More</p>
                     </div>
                     <div class="social-area">
                         <ul>
-                            <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
-                            <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
-                            <li><a href="#"><i class="bx bxl-pinterest-alt"></i></a></li>
-                            <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                            <li><a href="{{ $settings->facebook ?? '#' }}" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                            <li><a href="{{ $settings->twitter ?? '#' }}" target="_blank"><i class="bx bxl-twitter"></i></a></li>
+                            <li><a href="{{ $settings->youtube ?? '#' }}" target="_blank"><i class="bx bxl-youtube"></i></a></li>
+                            <li><a href="{{ $settings->instagram ?? '#' }}" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+                            <li><a href="{{ $settings->tiktok ?? '#' }}" target="_blank"><i class="bx bxl-tiktok"></i></a></li>
                         </ul>
                     </div>
                 </div>

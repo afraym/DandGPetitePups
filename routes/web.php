@@ -7,6 +7,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 
 Route::get('/', [App\Http\Controllers\PuppyController::class, 'index']);
+Route::get('/shop', [App\Http\Controllers\PuppyController::class, 'shop']);
 
 // admin routes
 Route::prefix('admin')->middleware(['auth'])->group(function () {

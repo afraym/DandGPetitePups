@@ -13,7 +13,8 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        return view('back.setting.index');
+        $settings = Settings::first(); 
+        return view('back.setting.index', compact('settings'));
     }
 
     /**
@@ -64,8 +65,12 @@ class SettingsController extends Controller
             
         }
         
-        $keys = request()->only(['description','address','phone','email','facebook','instagram','twitter',
-        'youtube','tiktok','headercode','footercode','','','','','','','','']);
+        $settings = request()->only(['description','address','phone','email','facebook','instagram','twitter',
+        'youtube','tiktok','headercode','footercode']);
+
+        Settings::updateOrCreate(['id' => 1], $settings);
+
+        return redirect()->back()->with('success', 'Settings updated successfully.');
     }
 
     /**
