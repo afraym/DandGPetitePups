@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-lg-12 d-flex align-items-center justify-content-md-between justify-content-center">
                     <div class="contact-number">
-                        <a href="tel:{{ $settings->phone }}"><img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/support2.svg" alt> {{ formatPhoneNumber($settings->phone ?? '') }}</a>
+                        <a href="tel:{{ $settings->phone ?? '' }}"><img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/support2.svg" alt> {{ formatPhoneNumber($settings->phone ?? '') }}</a>
                     </div>
                     <div class="opening-time text-center">
                         <p>Free Shipping On Shipment of $80 Or More</p>
