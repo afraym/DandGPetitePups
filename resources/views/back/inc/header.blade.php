@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.0/css/bootstrap-datepicker3.min.css">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="{{ asset('/assets/css/dashboard-custom.min.css?v=1.5.0') }}">
 </head>
 
@@ -143,16 +144,24 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/" title="Home">
-                  <i class="now-ui-icons shopping_shop"></i>
+                <a class="nav-link" href="/" title="Home" target="_blank">
+                  <i class='bx bx-home' style='font-size: 22px;'></i>
                   <p>
                     <span class="d-lg-none d-md-block">Home Page</span>
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/shop" title="Shop" target="_blank">
+                  <i class='bx bx-store' style='font-size: 22px;'></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Shop</span>
+                  </p>
+                </a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{ Auth::user()->name }} 
+                  {{ Auth::user()->name }} ( {{ Auth::user()->role }} )
                   <i class="now-ui-icons users_single-02"></i>
                   {{-- <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
