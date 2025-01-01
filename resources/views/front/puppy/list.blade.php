@@ -9,13 +9,15 @@
             </div>
             <div class="collection-img">
                 @if(empty($puppy->puppy_images->first()))
+                <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}">
                 <img class="img-fluid"
                     src="404"
                     alt="{{ $puppy->name }} image not found">
+                </a>
                 @else
-                <img class="img-fluid"
+                <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}"><img class="img-fluid"
                     src="{{ $puppy->puppy_images->first()->link . $puppy->puppy_images->first()->nameWithoutExt}}-thumb.webp"
-                    alt="{{ $puppy->name }} image">
+                    alt="{{ $puppy->name }} image"></a>
                 @endif
                 <div class="view-dt-btn">
                     <div class="plus-icon">
@@ -24,7 +26,7 @@
                     <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}">View Details</a>
                 </div>
                 <ul class="cart-icon-list">
-                    <li><a href="/cart"><img
+                    <li><a href="#" class="add-to-cart-btn" data-puppy-id="{{ $puppy->id }}"><img
                                 src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
                                 alt></a></li>
                     <li><a href="#"><img

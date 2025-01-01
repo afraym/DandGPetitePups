@@ -8,7 +8,11 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', [App\Http\Controllers\PuppyController::class, 'index']);
 Route::get('/shop', [App\Http\Controllers\PuppyController::class, 'shop']);
-
+Route::middleware(['auth'])->group( function () {
+    Route::post('/cart/add', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+    Route::post('/cart/remove', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.remove');
+    Route::get('/cart', [App\Http\Controllers\CartController::class, 'show'])->name('cart.show');
+});
 // admin routes
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 // puppies routes    
