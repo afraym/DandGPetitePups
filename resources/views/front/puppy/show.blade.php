@@ -86,7 +86,7 @@
                         </a>
                     </div>
                     <div class="buy-now-btn" data-puppy-id="{{ $puppy->id }}">
-                        <a href="#">Buy Now</a>
+                        <a href="#">Buy Now <i class='bx bxs-zap'></i></a>
                     </div>
                     <div class="compare-wishlist-area">
                         <ul>

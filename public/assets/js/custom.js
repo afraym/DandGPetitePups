@@ -10,7 +10,7 @@ images.forEach(image => {
   };
 });
 
-
+// add to cart
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.add-to-cart-btn').forEach(function (button) {
         button.addEventListener('click', function (event) {
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const puppyId = this.getAttribute('data-puppy-id');
             const cartIcon = this.querySelector('.cart-icon');
             const loaderIcon = document.getElementById(`loader-${puppyId}`);
-            console.log(loaderIcon);
 
             // Hide cart icon and show loader icon
             if (cartIcon) cartIcon.style.display = 'none';
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 if (data) {
                     // Show cart icon and hide loader icon
                 if (cartIcon) cartIcon.style.display = 'inline-block';
@@ -85,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 if (data.status === 'success' || data.status === 'exists' ) {
                     window.location.href = '/cart';
                 } else {

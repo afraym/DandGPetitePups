@@ -11,7 +11,7 @@
     your pet Food, <span>our Shop</span>?</h2>
     </div>
     <div class="footer-btn">
-    <a class="primary-btn6" href="shop.html">Shop Now</a>
+    <a class="primary-btn6" href="shop">Shop Now</a>
     </div>
     </div>
     </div>
@@ -22,8 +22,8 @@
     </div>
     <div class="menu-container">
     <ul>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="shop.html">New Product</a></li>
+    <li><a href="about">About Us</a></li>
+    <li><a href="shop">New Product</a></li>
     <li><a href="#">Online Gift Card</a></li>
     <li><a href="#">Bundle & Save</a></li>
     <li><a href="#">Pet Store Location</a></li>
