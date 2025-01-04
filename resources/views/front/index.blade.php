@@ -32,11 +32,11 @@
                                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-offer.png"
                                             alt>
                                     </div>
-                                    @if (Agent::isMobile()  == false)
+                                    {{-- @if (Agent::isMobile()  == false) --}}
                                     <img class="img-fluid banner-imgas"
                                         src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-img.png"
-                                        alt>
-                                        @endif
+                                        alt="offer slider">
+                                        {{-- @endif --}}
                                 </div>
                             </div>
                         </div>
@@ -64,11 +64,11 @@
                                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-offer.png"
                                             alt>
                                     </div>
-                                    @if (Agent::isMobile()  == false)
+                                    {{-- @if (Agent::isMobile()  == false) --}}
                                     <img class="img-fluid banner-imgas"
                                         src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-img-cat.png"
                                         alt="offer slider">
-                                        @endif
+                                        {{-- @endif --}}
                                 </div>
                             </div>
                         </div>
@@ -96,11 +96,11 @@
                                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-offer.png"
                                             alt>
                                     </div>
-                                    @if (Agent::isMobile()  == false)
+                                    {{-- @if (Agent::isMobile()  == false) --}}
                                     <img class="img-fluid banner-imgas"
                                         src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-img-dog.png"
                                         alt="Offer 2">
-                                        @endif
+                                        {{-- @endif --}}
                                 </div>
                             </div>
                         </div>

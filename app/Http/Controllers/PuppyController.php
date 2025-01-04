@@ -102,7 +102,7 @@ class PuppyController extends Controller
      */
     public function show(Puppy $puppy, Request $request)
     {
-        $this->authorize('view', $puppy);
+        // $this->authorize('view', $puppy);
 
         $puppy = Puppy::where('id', $request->id)->first();
         $puppyImages = PuppyImage::where('puppy_id', $request->id)->get();

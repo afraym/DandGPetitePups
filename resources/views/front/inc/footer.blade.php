@@ -113,6 +113,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/custom.min.js"></script>
-    <script src=""></script>
     </body>
     </html>

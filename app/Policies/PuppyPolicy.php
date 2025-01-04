@@ -21,7 +21,8 @@ class PuppyPolicy
      */
     public function view(User $user, Puppy $puppy): bool
     {
-        return $user->hasPermission('view-puppy');
+        // return $user->hasPermission('view-puppy');
+        return true;
     }
 
     /**
