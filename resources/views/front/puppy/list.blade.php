@@ -10,12 +10,12 @@
             <div class="collection-img">
                 @if(empty($puppy->puppy_images->first()))
                 <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}">
-                <img class="img-fluid"
+                <img loading="lazy" class="img-fluid"
                     src="404"
                     alt="{{ $puppy->name }} image not found">
                 </a>
                 @else
-                <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}"><img class="img-fluid"
+                <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}"><img loading="lazy" class="img-fluid"
                     src="{{ $puppy->puppy_images->first()->link . $puppy->puppy_images->first()->nameWithoutExt}}-thumb.webp"
                     alt="{{ $puppy->name }} image"></a>
                 @endif

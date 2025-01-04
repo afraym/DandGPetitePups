@@ -46,7 +46,7 @@ class CartController extends Controller
     }
     
       if ($cartItem) {
-        return response()->json(['status'=> 'exists', 'heading'=> 'Information', 'icon' => 'info', 'message' => 'This Puppy already exists in your cart']);
+        return response()->json(['status'=> 'Information', 'icon' => 'info', 'message' => 'This Puppy already exists in your cart']);
       }
       else {
         LaravelCart::query()->firstOrCreateWithStoreItems(
@@ -56,7 +56,7 @@ class CartController extends Controller
         );
         }
 
-        return response()->json(['status'=> 'success', 'heading'=> 'Success', 'icon' => 'success' ,'message'=> 'Puppy added to cart']);
+        return response()->json(['status'=> 'Success', 'icon' => 'success' ,'message'=> 'Puppy added to cart']);
     }
 
     /**

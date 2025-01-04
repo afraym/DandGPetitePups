@@ -32,9 +32,11 @@
                                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-offer.png"
                                             alt>
                                     </div>
+                                    @if (Agent::isMobile()  == false)
                                     <img class="img-fluid banner-imgas"
                                         src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-img.png"
                                         alt>
+                                        @endif
                                 </div>
                             </div>
                         </div>
@@ -62,9 +64,11 @@
                                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-offer.png"
                                             alt>
                                     </div>
+                                    @if (Agent::isMobile()  == false)
                                     <img class="img-fluid banner-imgas"
                                         src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-img-cat.png"
-                                        alt>
+                                        alt="offer slider">
+                                        @endif
                                 </div>
                             </div>
                         </div>
@@ -92,9 +96,11 @@
                                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-offer.png"
                                             alt>
                                     </div>
+                                    @if (Agent::isMobile()  == false)
                                     <img class="img-fluid banner-imgas"
                                         src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-banner-img-dog.png"
-                                        alt>
+                                        alt="Offer 2">
+                                        @endif
                                 </div>
                             </div>
                         </div>
@@ -326,8 +332,8 @@
                                         <div class="offer-img">
                                             <div class="offer-batch">
                                                 <img class="img-fluid"
-                                                    src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-offer-card.png"
-                                                    alt>
+                                                src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-offer-card.png"
+                                                alt="Offer image">                                                
                                             </div>
                                             <img class="img-fluid"
                                                 src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-offer-right.png"
