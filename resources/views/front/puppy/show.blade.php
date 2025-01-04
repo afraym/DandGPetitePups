@@ -78,10 +78,15 @@
                     </div>
                     {!! $puppy->shortDescHtml !!}
                     <div class="shop-quantity d-flex align-items-center justify-content-start mb-20">
-                        <a href="cart.html" class="primary-btn3">Add to cart</a>
+                        <a href="#" class="primary-btn3 add-to-cart-btn cart-icon" data-puppy-id="{{ $puppy->id }}">
+                            Add to cart  <img
+                            src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
+                            alt="cart image" class="cart-icon"/>
+                            <i class='bx bx-loader-circle bx-spin bx-rotate-90 loader-icon' id="loader-{{ $puppy->id }}" ></i>
+                        </a>
                     </div>
-                    <div class="buy-now-btn">
-                        <a href="cart.html">Buy Now</a>
+                    <div class="buy-now-btn" data-puppy-id="{{ $puppy->id }}">
+                        <a href="#">Buy Now</a>
                     </div>
                     <div class="compare-wishlist-area">
                         <ul>

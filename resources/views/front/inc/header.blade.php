@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/uiicss.css')}}">
 
     <link rel="stylesheet" href="{{ asset('/assets/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/custom.min.css')}}">
     @if(Route('register'))
     {!! RecaptchaV3::initJs() !!}
     @endif

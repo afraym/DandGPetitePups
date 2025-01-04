@@ -137,3 +137,11 @@ html .ui-button.ui-state-disabled:active:hover {
     height: 1.8em;
     line-height: 1.8em
 }
+
+.cart-icon,.loader-icon {
+    padding: 0px 2px 2px 5px;
+}
+.loader-icon {
+display:none; 
+color:#ffffff;
+}
