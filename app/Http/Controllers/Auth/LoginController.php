@@ -25,7 +25,12 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/puppy/new';
+    protected function redirectTo()
+    {
+        return url()->previous() && parse_url(url()->previous(), PHP_URL_HOST) == parse_url(config('app.url'), PHP_URL_HOST)
+            ? url()->previous()
+            : (auth()->user()->hasRole('admin') || auth()->user()->hasRole('super-admin') ? '/admin/puppy/new' : '/');
+    }
 
     /**
      * Create a new controller instance.

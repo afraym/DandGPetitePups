@@ -10,7 +10,7 @@ images.forEach(image => {
   };
 });
 
-
+// add to cart
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.add-to-cart-btn').forEach(function (button) {
         button.addEventListener('click', function (event) {
@@ -65,6 +65,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Show cart icon and hide loader icon
                 cartIcon.style.display = 'inline-block';
                 loaderIcon.style.display = 'none';
+            });
+        });
+    });
+});
+
+// Handle buy-now-btn click event
+document.querySelectorAll('.buy-now-btn').forEach(function (button) {
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+        const puppyId = this.getAttribute('data-puppy-id');
+
+        fetch('/cart/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({ puppy_id: puppyId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            if (data.status === 'Success' || data.status === 'Information') {
+                window.location.href = '/cart';
+            } else {
+                $.toast({
+                    heading: 'Error',
+                    text: 'Failed to add puppy to cart.',
+                    icon: 'error',
+                    stack: 5,
+                    hideAfter: 9000   // in milli seconds
+                });
+            }
+        })
+        .catch(error => {
+            $.toast({
+                heading: 'Error',
+                text: 'An unexpected error occurred, please try again.',
+                icon: 'error',
+                stack: 5,
+                hideAfter: 9000   // in milli seconds
             });
         });
     });
