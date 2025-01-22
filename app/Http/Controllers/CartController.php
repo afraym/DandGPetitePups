@@ -107,6 +107,13 @@ class CartController extends Controller
     }
 
     /**
+     * Show the form for checkout.
+     */
+    public function checkout(Request $request)
+    {
+        return view('front.cart.checkout');
+    }
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Cart $cart)

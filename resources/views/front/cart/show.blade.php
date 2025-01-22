@@ -124,8 +124,8 @@
                     </tbody>
                 </table>
                 <ul class="cart-btn-group">
-                    <li><a href="shop.html" class="primary-btn2 btn-lg">Continue to shopping</a></li>
-                    <li><a href="check-out.html" class="primary-btn3 btn-lg">Proceed to Checkout</a></li>
+                    <li><a href="/shop" class="primary-btn2 btn-lg">Continue to shopping</a></li>
+                    <li><a href="/checkout" class="primary-btn3 btn-lg">Proceed to Checkout</a></li>
                 </ul>
             </div>
         </div>
