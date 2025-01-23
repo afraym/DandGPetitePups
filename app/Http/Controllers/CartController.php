@@ -139,15 +139,31 @@ class CartController extends Controller
         ]);
 
         $user = Auth::user();
-        $userCart = LaravelCart::query(['user_id' => $user->id])->first();
-        $cartItem = $userCart->items('itemable_id', $request->item_id)->first();
-        // $cartItem = LaravelCart::query(['user_id' => $user->id, 'itemable_id' => $request->item_id])->first();
 
-        if ($cartItem) {
-            $cartItem->delete();
-            return response()->json(['status' => 'Success', 'icon' => 'success', 'message' => 'Puppy removed from cart']);
+        if ($user) {
+            $userCart = LaravelCart::query(['user_id' => $user->id])->first();
+            $cartItem = $userCart->items()->where('itemable_id', $request->item_id)->first();
+
+            if ($cartItem) {
+                $cartItem->delete();
+                return response()->json(['status' => 'Success', 'icon' => 'success', 'message' => 'Puppy removed from cart']);
+            } else {
+                return response()->json(['status' => 'Error', 'icon' => 'error', 'message' => 'Puppy not found in cart']);
+            }
         } else {
-            return response()->json(['status' => 'Error', 'icon' => 'error', 'message' => 'Puppy not found in cart']);
+            // Handle guest cart
+            $guestCart = session()->get('guest_cart', collect());
+            $cartItemKey = $guestCart->search(function ($item) use ($request) {
+                return $item['itemable_id'] == $request->item_id;
+            });
+
+            if ($cartItemKey !== false) {
+                $guestCart->pull($cartItemKey);
+                session()->put('guest_cart', $guestCart);
+                return response()->json(['status' => 'Success', 'icon' => 'success', 'message' => 'Puppy removed from cart']);
+            } else {
+                return response()->json(['status' => 'Error', 'icon' => 'error', 'message' => 'Puppy not found in cart']);
+            }
         }
     }
 }

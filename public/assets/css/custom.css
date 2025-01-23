@@ -139,7 +139,7 @@ html .ui-button.ui-state-disabled:active:hover {
 }
 
 .cart-icon,.loader-icon {
-    padding: 0px 2px 2px 5px;
+    padding: 0px 2px 2px 2px;
 }
 .loader-icon {
 display:none; 
