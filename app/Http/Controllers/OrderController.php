@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Auth;
 use Illuminate\Http\Request;
+use \Binafy\LaravelCart\Models\Cart as LaravelCart;
+use Nafezly\Payments\Classes\PayPalPayment;
 
 class OrderController extends Controller
 {
@@ -30,7 +32,13 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        $cartItems = $user ? LaravelCart::driver('database')->getContent() : collect(session()->get('cart', []));
+        if ($user) {
+            $cart = LaravelCart::query(['user_id' => $user->id])->first();
+            $cartItems = $cart ? $cart->items : collect();
+        } else {
+            $cartItems = session()->get('guest_cart', collect());
+        }
+
 
         if ($cartItems->isEmpty()) {
             return back()->with(['status' => 'Error', 'icon' => 'error', 'message' => 'Your cart is empty']);
@@ -48,9 +56,11 @@ class OrderController extends Controller
             'status' => 'pending',
         ]);
 
+        redirect($this->payWithPaypal($request,100));
+
         // Create order items
         foreach ($cartItems as $item) {
-            OrderItem::create([
+            Order::create([
                 'order_id' => $order->id,
                 'puppy_id' => $item->id,
                 'quantity' => $item->quantity,
@@ -58,9 +68,10 @@ class OrderController extends Controller
             ]);
         }
 
+        
         // Clear the cart
         if ($user) {
-            LaravelCart::driver('database')->clear();
+            LaravelCart::query(['user_id' => $user->id])->first()->emptyCart();
         } else {
             session()->forget('cart');
         }
@@ -99,5 +110,45 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    
+    public function payWithPaypal(Request $request, $amount){
+        $payment = new PayPalPayment();
+        $response = $payment->setAmount($amount)->pay();  
+        
+        if (isset($response['redirect_url'])) {
+
+            // die($response['redirect_url']);
+        //    redirect()->to("https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=");
+          return $response['redirect_url'];
+        }
+        
+        // dd($response);
+        //output
+        //[
+        //    'payment_id'=>"", // reference code that should be stored in your orders table
+        //    'redirect_url'=>"", // redirect url available for some payment gateways
+        //    'html'=>"" // rendered html available for some payment gateways
+        //]
+    }
+
+    public function verifyWithPaypal(Request $request){
+        $payment = new PayPalPayment();
+        $response = $payment->verify($request);
+        
+        
+        dd($response);
+        //output
+        //[
+        //    'success'=>true,//or false
+        //    'payment_id'=>"PID",
+        //    'message'=>"Done Successfully",//message for client
+        //    'process_data'=>""//payment response
+        //]
+    }
+
+    public function payment_verify(Request $request){
+        $this->verifyWithPaypal($request);
     }
 }

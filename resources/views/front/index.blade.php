@@ -1,6 +1,7 @@
 @extends('layouts.front')
 @section('content')
 
+@if(isset($settings) && $settings->frontpage_carousel)
 <div class="hero3 mb-90">
     <div class="background-text">
         <h2 class="marquee_text"><img
@@ -115,9 +116,11 @@
         </div>
     </div>
 </div>
+@endif
 
 
-<div class="home3-categoty-area pt-120 mb-120">
+@if(isset($settings) && $settings->frontpage_carousel)
+<div class="home3-categoty-area pt-120 mb-120" id="category-section">
     <div class="container">
         {{-- <div class="row mb-60">
             <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
@@ -261,6 +264,7 @@
         </div> --}}
     </div>
 </div>
+@endif
 
 
 <div class="home3-collection-area mb-120">
@@ -888,4 +892,12 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const categorySection = document.getElementById('category-section');
+        if (categorySection) {
+            categorySection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
 @endsection

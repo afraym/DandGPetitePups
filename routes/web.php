@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\FrontController;
 
 
 Route::get('/', [App\Http\Controllers\PuppyController::class, 'index']);
@@ -60,4 +61,5 @@ Route::get('/auth/callback', function () {
     // $user->token
 });
 
+Route::get('/payments/verify/{payment?}',[App\Http\Controllers\OrderController::class,'payment_verify'])->name('verify-payment');
 // Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

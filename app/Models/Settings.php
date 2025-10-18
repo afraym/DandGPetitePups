@@ -20,6 +20,7 @@ class Settings extends Model
         'youtube',
         'tiktok',
         'headercode',
-        'footercode'
+        'footercode',
+        'frontpage_carousel', // added
     ];
 }

@@ -104,6 +104,21 @@
                   <input type="text" name="FACEBOOK_CLIENT_SECRET" class="form-control" id="FACEBOOK_CLIENT_SECRET" placeholder="AIzaSyAj6aOdluCbK0IoSU0pd9nvDUC7r3TSuT4" value="{{ env('FACEBOOK_CLIENT_SECRET') }}">
                 </div>
                 </div>
+            <div class="form-group">
+              <label for="frontpage_carousel">Front Page Carousel</label>
+              <div class="form-check">
+                <!-- ensure a value is sent when checkbox is unchecked -->
+                <input type="hidden" name="frontpage_carousel" value="0">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="frontpage_carousel" id="frontpage_carousel" value="1"
+                    {{ (isset($settings) ? ($settings->frontpage_carousel ? 'checked' : '') : 'checked') }}>
+                  Enable carousel on front page
+                  <span class="form-check-sign">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
           </form>
         </div>

@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('tiktok')->nullable();
             $table->text('headercode')->nullable();
             $table->text('footercode')->nullable();
+            // Add frontpage_carousel flag (1 = enabled, 0 = disabled)
+            $table->boolean('frontpage_carousel')->default(true);
             $table->timestamps();
         });
     }
