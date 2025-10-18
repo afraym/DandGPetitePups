@@ -66,10 +66,10 @@ class SettingsController extends Controller
         }
         
         $settings = request()->only(['description','address','phone','email','facebook','instagram','twitter',
-        'youtube','tiktok','headercode','footercode']);
+        'youtube','tiktok','headercode','footercode','frontpage_carousel']);
 
         // ensure checkbox is persisted (if unchecked it won't be present in request)
-        $settings['frontpage_carousel'] = $request->has('frontpage_carousel') ? 1 : 0;
+        // $settings['frontpage_carousel'] = $request->has('frontpage_carousel') ? 1 : 0;
 
         Settings::updateOrCreate(['id' => 1], $settings);
 
