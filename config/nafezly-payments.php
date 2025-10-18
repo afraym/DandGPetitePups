@@ -111,5 +111,8 @@ return [
 
     #CLICKPAY
     'CLICKPAY_SERVER_KEY'=>env('CLICKPAY_SERVER_KEY'),
-    'CLICKPAY_PROFILE_ID'=>env('CLICKPAY_PROFILE_ID')
+    'CLICKPAY_PROFILE_ID'=>env('CLICKPAY_PROFILE_ID'),
+
+    #Stripe
+    'STRIPE_SECRET_KEY' => env('STRIPE_SECRET_KEY', ''), // Replace hardcoded key with environment variable
 ];
