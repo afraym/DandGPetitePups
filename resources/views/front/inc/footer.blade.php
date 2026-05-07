@@ -4,7 +4,7 @@
     <div class="col-lg-5 col-md-12">
     <div class="footer-widget">
     <div class="footer-icon">
-    <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/header2-logo.svg" alt>
+    <img src="{{ asset('/assets/images/footer-logo.png')}}" alt>
     </div>
     <div class="widget-title">
     <h2>want <span>to Take</span><br>

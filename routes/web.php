@@ -47,6 +47,15 @@ Route::post('/breed/delete/', [App\Http\Controllers\BreedController::class, 'des
 // front routes
 Route::get('/puppy/{id}/{name}', [App\Http\Controllers\PuppyController::class, 'show']);
 
+// static pages
+Route::get('/about', function () {
+    return view('front.about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('front.contact');
+})->name('contact');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

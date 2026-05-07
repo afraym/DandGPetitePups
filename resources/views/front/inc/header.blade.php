@@ -70,7 +70,7 @@
     <header class="header-area style-3">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="header-logo">
-                <a href="/"><img alt="image" class="img-fluid" src="{{ asset('/assets/images/logo.webp')}}"></a>
+                <a href="/"><img alt="image" class="img-fluid" src="{{ asset('/assets/images/logo.png')}}"></a>
             </div>
             <div class="main-menu">
                 <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
