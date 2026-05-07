@@ -11,7 +11,7 @@
                         <h2>Our Story — Matching Puppies with Caring Homes</h2>
                     </div>
                     <div class="story-content">
-                        <p>Pellentesque maximus augue orci, quis congue purus iaculison id. Maecenas eu lorem quisesdoi massal molestie vulputate in sitagi amet diam. Cras eu odio sit amet ipsum cursus for that gone pellentesquea. thisaton Vestibulum ut aliquet risus. In hac habitasse plateajoa dictumst. Nuncet posuere scelerisque justo in accumsan.</p>
+                        <p>DG Pups helps families find healthy, well-socialized puppies while giving breeders a simple, affordable way to list puppies and supplies. We focus on clear information, responsible selling practices, and the support buyers need to make confident decisions.</p>
                         <div class="story-title-reviews">
                             <h3>Our approach builds confidence and <span>connection</span>.</h3>
                             <div class="review">
@@ -19,7 +19,7 @@
                                 <img src="assets/images/icon/trastpilot.svg" alt="">
                             </div>
                         </div>
-                        <p>Pellentesque maximus augue orci, quis congue purus iaculison id. Maecenas eu lorem quisesdoi massal molestie vulputate in sitagi amet diam. Cras eu odio sit amet ipsum cursus for that gone pellentesquea. thisaton Vestibulum ut aliquet risus.</p>
+                        <p>DG Pups focuses on healthy puppies, honest listings, and helpful guidance so families can choose a new companion with confidence.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center">
@@ -48,10 +48,7 @@
                         <div class="services-content">
                             <img src="assets/images/icon/section-sl-no.svg" alt="">
                             <h2>Trusted puppy placements & care</h2>
-                            <p>Pellentesque maximus augue orci, quis congue purus iaculison id. Maecenas eu lorem quisesdoi
-                                massal molestie vulputate in sitagi amet diam. Cras eu odio sit amet ipsum cursus for that
-                                gone pellentesquea. thisaton Vestibulum ut aliquet risus. In hac habitasse plateajoa
-                                dictumst. Nuncet posuere scelerisque justo in accumsan.</p>
+                            <p>We support each puppy with regular health checks, thoughtful socialization, and clear communication so families know exactly what to expect before adoption.</p>
                             <div class="author-area">
                                 <div class="author-quat">
                                     <p><sup><img src="assets/images/icon/author-quat-icon.svg" alt=""></sup> "Our team cares for every puppy from birth — health, socialization, and honest advice for owners."</p>
