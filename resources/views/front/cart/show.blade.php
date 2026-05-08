@@ -49,17 +49,17 @@
                             <tr class="cart-item">
                                 <td data-label="Delete">
                                     <div class="delete-icon" bis_skin_checked="1">
-                                        <i class="bi bi-x delete-cart-item" data-item-id="{{ $item->id }}"></i>
+                                        <i class="bi bi-x delete-cart-item" data-item-id="{{ data_get($item, 'id') }}"></i>
                                     </div>
                                 </td>
                                 <td data-label="Image">
-                                    @if ($item->image)
-                                        <img src="/{{ $item->image->link .'/'. $item->image->nameWithoutExt }}-mini.webp" alt="">
+                                    @if (data_get($item, 'image'))
+                                        <img src="/{{ data_get($item, 'image.link') . '/' . data_get($item, 'image.nameWithoutExt') }}-mini.webp" alt="">
                                     @endif
                                 </td>
-                                <td data-label="Name"><a href="/puppy/{{ $item->itemable_id }}/{{ $item->name }}">{{ $item->name }}</a></td>
-                                <td data-label="Price"><del>$30.00</del> ${{ $item->price}}</td>
-                                <td data-label="Subtotal">${{ $item->price }}</td>
+                                <td data-label="Name"><a href="/puppy/{{ data_get($item, 'itemable_id') }}/{{ data_get($item, 'name') }}">{{ data_get($item, 'name') }}</a></td>
+                                <td data-label="Price"><del>$30.00</del> ${{ data_get($item, 'price') }}</td>
+                                <td data-label="Subtotal">${{ data_get($item, 'price') }}</td>
                             </tr>
                             @endforeach
 
@@ -86,7 +86,7 @@
                         <tr>
                             <th>Cart Totals</th>
                             <th></th>
-                            <th>$128.70</th>
+                            <th>${{ $cartItems->sum('price') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -95,31 +95,31 @@
                             <td>
                                 <ul class="cost-list text-start">
                                     <li>Shipping Fee</li>
-                                    <li>Total ( tax excl.)</li>
+                                    {{-- <li>Total ( tax excl.)</li>
                                     <li>Total ( tax incl.)</li>
                                     <li>Taxes</li>
                                     <li>Shipping Enter your address to view shipping options. <br> <a href="#">Calculate
                                             shipping</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </td>
                             <td>
                                 <ul class="single-cost text-center">
-                                    <li>Fee</li>
-                                    <li>$15
+                                    <li>Free!</li>
+                                    {{-- <li>$15
                                     </li>
                                     <li>
                                     </li>
                                     <li>$15</li>
                                     <li>$15</li>
-                                    <li>$5</li>
+                                    <li>$5</li> --}}
                                 </ul>
                             </td>
                         </tr>
                         <tr>
                             <td>Subtotal</td>
                             <td></td>
-                            <td>$162.70</td>
+                            <td>${{ $cartItems->sum('price') }}</td>
                         </tr>
                     </tbody>
                 </table>

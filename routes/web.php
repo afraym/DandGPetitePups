@@ -12,6 +12,8 @@ Route::get('/shop', [App\Http\Controllers\PuppyController::class, 'shop'])->name
 Route::post('/cart/add', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
 Route::post('/cart/remove', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.remove');
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'show'])->name('cart.show');
+Route::get('/favorites', [App\Http\Controllers\FavoritesController::class, 'index'])->name('favorites.index');
+Route::get('/favorites/toggle/{puppy}', [App\Http\Controllers\FavoritesController::class, 'toggle'])->name('favorites.toggle');
 Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'store'])->name('order.checkout');
 Route::middleware(['auth'])->group( function () {
     
@@ -24,6 +26,10 @@ Route::get('/puppy/all', [App\Http\Controllers\PuppyController::class, 'list'])-
 Route::get('/puppy/edit/{id}', [App\Http\Controllers\PuppyController::class, 'edit'])->name('admin.puppy.edit');
 Route::patch('/puppy/update/{id}', [App\Http\Controllers\PuppyController::class, 'update'])->name('admin.puppy.update');
 Route::post('/puppy/delete/', [App\Http\Controllers\PuppyController::class, 'destroy'])->name('admin.puppy.delete');
+Route::get('/orders/all', [App\Http\Controllers\OrderController::class, 'index'])->name('admin.order.list');
+Route::get('/orders/show/{order}', [App\Http\Controllers\OrderController::class, 'show'])->name('admin.order.show');
+Route::patch('/orders/update/{order}', [App\Http\Controllers\OrderController::class, 'update'])->name('admin.order.update');
+Route::post('/orders/delete/', [App\Http\Controllers\OrderController::class, 'destroy'])->name('admin.order.delete');
 Route::post('/ai/new', [App\Http\Controllers\AiController::class, 'create'])->name('admin.ai.create');
 Route::patch('/ai/new', [App\Http\Controllers\AiController::class, 'create'])->name('admin.ai.patch');
 

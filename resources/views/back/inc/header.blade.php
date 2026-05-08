@@ -61,6 +61,12 @@
               <p>Breeds</p>
             </a>
           </li>
+          <li class="@if(Route::currentRouteName() == 'admin.order.list' || Route::currentRouteName() == 'admin.order.show') active @endif">
+            <a href="{{ route('admin.order.list') }}">
+              <i class="fa-solid fa-receipt"></i>
+              <p>Orders</p>
+            </a>
+          </li>
           <li class="@if(Route::currentRouteName() == 'admin.user.list') active @endif">
             <a href="{{ route('admin.user.list') }}">
               <i class="fa-solid fa-users"></i>
@@ -104,6 +110,14 @@
             @case('admin.breed.list')
 
             All Breeds List
+            @break
+            @case('admin.order.list')
+
+            All Orders List
+            @break
+            @case('admin.order.show')
+
+            Order Details
             @break
             @case('admin.user.list')
 

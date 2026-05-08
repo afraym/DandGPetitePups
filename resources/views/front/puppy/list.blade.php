@@ -4,9 +4,15 @@
    
     <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="collection-card">
+            @if(isset($puppy) && $puppy->status == 0)
+            <div class="offer-card sold-out">
+                <span>Sold Out</span>
+            </div>
+            @else
             <div class="offer-card">
                 <span>Offer</span>
             </div>
+            @endif
             <div class="collection-img">
                 @if(empty($puppy->puppy_images->first()))
                 <a href="/puppy/{{ $puppy->id }}/{{ $puppy->name }}">
@@ -32,7 +38,7 @@
                                 src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
                                 alt="cart image" class="cart-icon">
                                 </a></li>
-                    <li><a href="#"><img
+                    <li><a href="{{ route('favorites.toggle', $puppy->id) }}"><img
                                 src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-favorites3.svg"
                                 alt></a></li>
                 </ul>

@@ -430,7 +430,7 @@
                                         <li><a href="cart.html"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
                                                     alt></a></li>
-                                        <li><a href="#"><img
+                                        <li><a href="{{ route('favorites.index') }}"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-favorites3.svg"
                                                     alt></a></li>
                                     </ul>
@@ -470,7 +470,7 @@
                                         <li><a href="cart.html"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
                                                     alt></a></li>
-                                        <li><a href="#"><img
+                                        <li><a href="{{ route('favorites.index') }}"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-favorites3.svg"
                                                     alt></a></li>
                                     </ul>
@@ -513,7 +513,7 @@
                                         <li><a href="cart.html"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
                                                     alt></a></li>
-                                        <li><a href="#"><img
+                                        <li><a href="{{ route('favorites.index') }}"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-favorites3.svg"
                                                     alt></a></li>
                                     </ul>
@@ -553,7 +553,7 @@
                                         <li><a href="cart.html"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
                                                     alt></a></li>
-                                        <li><a href="#"><img
+                                        <li><a href="{{ route('favorites.index') }}"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-favorites3.svg"
                                                     alt></a></li>
                                     </ul>
@@ -596,7 +596,7 @@
                                         <li><a href="cart.html"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
                                                     alt></a></li>
-                                        <li><a href="#"><img
+                                        <li><a href="{{ route('favorites.index') }}"><img
                                                     src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-favorites3.svg"
                                                     alt></a></li>
                                     </ul>
@@ -668,7 +668,7 @@
             <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap gap-3">
                 <div class="section-title3">
                     <h2><img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/h3-sec-tt-vect-left.svg"
-                            alt><span>Customers Think About Us</span><img
+                            alt><span>What Customers Say</span><img
                             src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/h3-sec-tt-vect-right.svg"
                             alt></h2>
                 </div>
@@ -699,17 +699,15 @@
                                         <li><i class="bi bi-star-fill"></i></li>
                                     </ul>
                                 </div>
-                                <p>Pellentesque maximus augue orci, quis congue puru
-                                    Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu
-                                    lorem quis massal outi molestie vulputate in sit ameti diam.</p>
+                                <p>I bought my first Yorkshire terrier here in 2020, and I’m very happy with the purchase. The price was reasonable, and I got all the vaccines and paperwork.</p>
                                 <div class="author-area">
                                     <div class="author-img">
-                                        <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-autho-1.png"
-                                            alt>
+                                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjX6pmav18_vFJLUoDYuYATgGdtF7R170WYzQsLGMJZY1G76wpU=w36-h36-p-rp-mo-ba3-br100"
+                                            alt="Peach Fairy">
                                     </div>
                                     <div class="author-name-deg">
-                                        <h3>Sebastian Ethan</h3>
-                                        <span>Customer</span>
+                                        <h3>Peach Fairy</h3>
+                                        <span>Google Maps Review</span>
                                     </div>
                                 </div>
                             </div>
@@ -725,17 +723,15 @@
                                         <li><i class="bi bi-star-fill"></i></li>
                                     </ul>
                                 </div>
-                                <p>Pellentesque maximus augue orci, quis congue puru
-                                    Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu
-                                    lorem quis massal outi molestie vulputate in sit ameti diam.</p>
+                                <p>We brought our two dogs here when they were puppies. They are now 3 and 4 years old and healthy. They were microchipped and got their first vaccines.</p>
                                 <div class="author-area">
                                     <div class="author-img">
-                                        <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-autho-2.png"
-                                            alt>
+                                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjWV-hZjVaSEvdJHFmJBqyfTDpuwI2l5KW_u7XbikRhaBd2i1Lcr=w36-h36-p-rp-mo-br100"
+                                            alt="medora michaud">
                                     </div>
                                     <div class="author-name-deg">
-                                        <h3>Lokand Donark</h3>
-                                        <span>Customer</span>
+                                        <h3>medora michaud</h3>
+                                        <span>Google Maps Review</span>
                                     </div>
                                 </div>
                             </div>
@@ -751,17 +747,15 @@
                                         <li><i class="bi bi-star-fill"></i></li>
                                     </ul>
                                 </div>
-                                <p>Pellentesque maximus augue orci, quis congue puru
-                                    Pellentesque maximus augue orci, quis congue coug purus iaculis idl Maecenas eu
-                                    lorem quis massal outi molestie vulputate in sit ameti diam.</p>
+                                <p>Buying my Yorkshire dog 9 years ago was the best decision I ever made in my life. He brought me tremendous joy.</p>
                                 <div class="author-area">
                                     <div class="author-img">
-                                        <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/bg/h3-autho-3.png"
-                                            alt>
+                                        <img src="https://lh3.googleusercontent.com/a/ACg8ocIPume0Zozik_lACDF4YJi1d9EG4Rf70SoV90OsDn8BIJc2PQ=w36-h36-p-rp-mo-br100"
+                                            alt="Denise Kuhle">
                                     </div>
                                     <div class="author-name-deg">
-                                        <h3>Angelina Gushe</h3>
-                                        <span>Customer</span>
+                                        <h3>Denise Kuhle</h3>
+                                        <span>Google Maps Review</span>
                                     </div>
                                 </div>
                             </div>

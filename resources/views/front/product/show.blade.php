@@ -102,7 +102,7 @@
 <div class="compare-wishlist-area">
 <ul>
 <li><a href="#"><span><img src="{{asset('/assets/images/icon/compare.svg')}}" alt></span> Compare</a></li>
-<li><a href="#"><span><img src="{{asset('/assets/images/icon/Icon-favorites2.svg')}}" alt></span> Add to wishlist</a></li>
+<li><a href="{{ route('favorites.toggle', $puppy->id) }}"><span><img src="{{asset('/assets/images/icon/Icon-favorites2.svg')}}" alt></span> Add to wishlist</a></li>
 </ul>
 </div>
 <div class="pyment-method">
@@ -324,7 +324,7 @@
 </div>
 <ul class="cart-icon-list">
 <li><a href="cart.html"><img src="{{ asset('assets/images/icon/Icon-cart3.svg')}}" alt></a></li>
-<li><a href="#"><img src="{{ asset('assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
+<li><a href="{{ route('favorites.toggle', $puppy->id) }}"><img src="{{ asset('assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
 </ul>
 </div>
 <div class="collection-content text-center">
@@ -358,7 +358,7 @@
 </div>
 <ul class="cart-icon-list">
 <li><a href="cart.html"><img src="{{ asset('assets/images/icon/Icon-cart3.svg')}}" alt></a></li>
-<li><a href="#"><img src="{{ asset('assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
+<li><a href="{{ route('favorites.toggle', $puppy->id) }}"><img src="{{ asset('assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
 </ul>
 </div>
 <div class="collection-content text-center">
@@ -395,7 +395,7 @@
 </div>
 <ul class="cart-icon-list">
 <li><a href="cart.html"><img src="{{ asset('assets/images/icon/Icon-cart3.svg')}}" alt></a></li>
-<li><a href="#"><img src="{{ asset('assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
+<li><a href="{{ route('favorites.toggle', $puppy->id) }}"><img src="{{ asset('assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
 </ul>
 </div>
 <div class="collection-content text-center">
@@ -429,7 +429,7 @@
 </div>
 <ul class="cart-icon-list">
 <li><a href="cart.html"><img src="{{asset('/assets/images/icon/Icon-cart3.svg')}}" alt></a></li>
-<li><a href="#"><img src="{{asset('/assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
+<li><a href="{{ route('favorites.toggle', $puppy->id) }}"><img src="{{asset('/assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
 </ul>
 </div>
 <div class="collection-content text-center">
@@ -466,7 +466,7 @@
 </div>
 <ul class="cart-icon-list">
 <li><a href="cart.html"><img src="{{asset('/assets/images/icon/Icon-cart3.svg')}}" alt></a></li>
-<li><a href="#"><img src="{{asset('/assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
+<li><a href="{{ route('favorites.toggle', $puppy->id) }}"><img src="{{asset('/assets/images/icon/Icon-favorites3.svg')}}" alt></a></li>
 </ul>
 </div>
 <div class="collection-content text-center">
