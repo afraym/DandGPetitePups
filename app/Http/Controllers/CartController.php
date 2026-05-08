@@ -35,6 +35,10 @@ class CartController extends Controller
         ]);
 
         $puppy = Puppy::findOrFail($request->puppy_id);
+        // Prevent adding sold puppies
+        if (isset($puppy->status) && $puppy->status == 0) {
+            return response()->json(['status' => 'Error', 'icon' => 'error', 'message' => 'This puppy is sold and cannot be added to cart']);
+        }
         
         $user = Auth::user();
 
@@ -64,6 +68,10 @@ class CartController extends Controller
             if ($cartItem) {
                 return response()->json(['status' => 'Information', 'icon' => 'info', 'message' => 'This Puppy already exists in your cart']);
             } else {
+                // double-check puppy availability for guests
+                if (isset($puppy->status) && $puppy->status == 0) {
+                    return response()->json(['status' => 'Error', 'icon' => 'error', 'message' => 'This puppy is sold and cannot be added to cart']);
+                }
                 $guestCart->push([
                     'itemable_id' => $puppy->id,
                     'quantity' => 1,

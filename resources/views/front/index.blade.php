@@ -297,7 +297,7 @@
     </div>
 </div>
 
-
+{{-- 
 <div class="h3-offer-area mb-120">
     <div class="container-fluid p-0 overflow-hidden">
         <div class="row">
@@ -384,9 +384,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
-
+{{-- 
 <div class="essential-items-area mb-120">
     <div class="container">
         <div class="row mb-60">
@@ -625,10 +625,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
-<div class="offer-banner-area mb-120">
+{{-- <div class="offer-banner-area mb-120">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12 col-md-6 col-sm-8">
@@ -659,7 +659,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <div class="home3-testimonial-area mb-120">

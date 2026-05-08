@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.add-to-cart-btn').forEach(function (button) {
         button.addEventListener('click', function (event) {
             event.preventDefault();
+            // Ignore clicks on disabled buttons or sold items
+            if (this.classList.contains('disabled') || this.getAttribute('aria-disabled') === 'true') {
+                return;
+            }
+            const parentCard = this.closest('.collection-card');
+            if (parentCard && parentCard.querySelector('.offer-card.sold-out')) {
+                return;
+            }
             const puppyId = this.getAttribute('data-puppy-id');
             const cartIcon = this.querySelector('.cart-icon');
             const loaderIcon = document.getElementById(`loader-${puppyId}`);
@@ -74,7 +82,13 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelectorAll('.buy-now-btn').forEach(function (button) {
     button.addEventListener('click', function (event) {
         event.preventDefault();
+        // Ignore clicks on disabled buy buttons
+        if (this.classList.contains('disabled') || this.getAttribute('aria-disabled') === 'true') {
+            return;
+        }
+
         const puppyId = this.getAttribute('data-puppy-id');
+        if (!puppyId) return;
 
         fetch('/cart/add', {
             method: 'POST',

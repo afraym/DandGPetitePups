@@ -29,11 +29,39 @@ class PuppyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function shop()
+    public function shop(Request $request)
     {
         $settings = DB::table('settings')->first();
-        $puppies = Puppy::with('puppy_images')->orderBy('id','desc')->paginate(20);
-        return view('front.shop')->with(['puppies' => $puppies, 'settings' => $settings]);
+
+        $q = $request->query('q');
+        $minPrice = $request->query('min_price');
+        $maxPrice = $request->query('max_price');
+
+        $query = Puppy::with('puppy_images')->orderBy('id','desc');
+
+        if ($q) {
+            $query->where(function($sub) use ($q) {
+                $sub->where('name', 'like', "%{$q}%")
+                    ->orWhere('shortDescHtml', 'like', "%{$q}%");
+            });
+        }
+
+        if ($minPrice !== null && $minPrice !== '') {
+            $query->where('price', '>=', floatval($minPrice));
+        }
+        if ($maxPrice !== null && $maxPrice !== '') {
+            $query->where('price', '<=', floatval($maxPrice));
+        }
+
+        $puppies = $query->paginate(20)->appends($request->only(['q','min_price','max_price']));
+
+        return view('front.shop')->with([
+            'puppies' => $puppies,
+            'settings' => $settings,
+            'q' => $q,
+            'min_price' => $minPrice,
+            'max_price' => $maxPrice
+        ]);
     }
 
     /**

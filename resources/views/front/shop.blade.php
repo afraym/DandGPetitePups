@@ -34,16 +34,22 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="shop-sidebar">
-                        <div class="shop-widget">
-                            <h5 class="shop-widget-title">Price Range</h5>
-                            <div class="range-widget">
-                                <div id="slider-range" class="price-filter-range"></div>
-                                <div class="mt-25 d-flex justify-content-between gap-4">
-                                    <input type="number" min=100 max="499" oninput="validity.valid||(value='100');" id="min_price" class="price-range-field" />
-                                    <input type="number" min=100 max="500" oninput="validity.valid||(value='500');" id="max_price" class="price-range-field" />
+                        <form method="GET" action="{{ route('shop') }}" id="price-range-form">
+                            <div class="shop-widget">
+                                <h5 class="shop-widget-title">Price Range</h5>
+                                <div class="range-widget">
+                                    <div id="slider-range" class="price-filter-range"></div>
+                                    <div class="mt-25 d-flex justify-content-between gap-4">
+                                        <input type="number" min=0 max="99999" name="min_price" oninput="validity.valid||(value='0');" id="min_price" class="price-range-field" value="{{ request('min_price', '') }}" placeholder="Min" />
+                                        <input type="number" min=0 max="99999" name="max_price" oninput="validity.valid||(value='99999');" id="max_price" class="price-range-field" value="{{ request('max_price', '') }}" placeholder="Max" />
+                                        <button type="submit" class="btn btn-warning btn-sm">Filter</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            @if(request('q'))
+                                <input type="hidden" name="q" value="{{ request('q') }}" />
+                            @endif
+                        </form>
                         <div class="shop-widget">
                             <div class="check-box-item">
                                 <h5 class="shop-widget-title">Category</h5>

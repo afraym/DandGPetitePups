@@ -61,6 +61,11 @@
             </div>
             <div class="col-lg-5">
                 <div class="shop-details-content">
+                    @if(isset($puppy) && $puppy->status == 0)
+                    <div class="offer-card sold-out mb-3" style="display:inline-block">
+                        <span>Sold Out</span>
+                    </div>
+                    @endif
                     <h3>{{ $puppy->name }}</h3>
                     <ul class="shopuct-review2 d-flex flex-row align-items-center mb-25">
                         <li><i class="bi bi-star-fill"></i></li>
@@ -78,16 +83,29 @@
                     </div>
                     {!! $puppy->shortDescHtml !!}
                     <div class="shop-quantity d-flex align-items-center justify-content-start mb-20">
-                        <a href="#" class="primary-btn3 add-to-cart-btn cart-icon" data-puppy-id="{{ $puppy->id }}">
-                            Add to cart  <img
-                            src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
-                            alt="cart image" class="cart-icon"/>
-                            <i class='bx bx-loader-circle bx-spin bx-rotate-90 loader-icon' id="loader-{{ $puppy->id }}" ></i>
-                        </a>
+                        @if(isset($puppy) && $puppy->status == 0)
+                            <a href="javascript:void(0)" class="primary-btn3 disabled" aria-disabled="true">
+                                Sold Out
+                                <img src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg" alt="cart image" class="cart-icon"/>
+                            </a>
+                        @else
+                            <a href="#" class="primary-btn3 add-to-cart-btn cart-icon" data-puppy-id="{{ $puppy->id }}">
+                                Add to cart  <img
+                                src="https://demo.egenslab.com/html/scooby/preview/assets/images/icon/Icon-cart3.svg"
+                                alt="cart image" class="cart-icon"/>
+                                <i class='bx bx-loader-circle bx-spin bx-rotate-90 loader-icon' id="loader-{{ $puppy->id }}" ></i>
+                            </a>
+                        @endif
                     </div>
-                    <div class="buy-now-btn" data-puppy-id="{{ $puppy->id }}">
-                        <a href="#">Buy Now <i class='bx bxs-zap'></i></a>
-                    </div>
+                    @if(isset($puppy) && $puppy->status == 0)
+                        <div class="buy-now-btn disabled" aria-disabled="true">
+                            <a href="javascript:void(0)" class="primary-btn3 disabled" aria-disabled="true">Sold Out</a>
+                        </div>
+                    @else
+                        <div class="buy-now-btn" data-puppy-id="{{ $puppy->id }}">
+                            <a href="#">Buy Now <i class='bx bxs-zap'></i></a>
+                        </div>
+                    @endif
                     <div class="compare-wishlist-area">
                         <ul>
                             <li><a href="#"><span><img src="{{asset('/assets/images/icon/compare.svg')}}" alt></span>
